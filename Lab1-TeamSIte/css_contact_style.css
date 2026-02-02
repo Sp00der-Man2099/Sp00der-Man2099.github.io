@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(1, 1, 113);
+    margin: 0;
+}
+iframe{
+    justify-content: center;
+}
+footer{
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+.navLink {
+  width: 10%;
+  height: fit-content;
+  font-size: 2vw;
+  padding: 0.5vw;
+  background-color: lightcoral;
+  border: 1px solid;
+  margin: 1.5vw;
+  color: red;
+  text-decoration: none;
+  text-align: center;
+  background-color: black;
+}
+.navLink:hover {
+    background-color: rgb(255, 158, 122);
+    scale: 120%;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}

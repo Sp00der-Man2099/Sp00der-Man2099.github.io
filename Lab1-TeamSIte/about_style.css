@@ -1,0 +1,67 @@
+body {
+  background-color: gray;
+}
+th {
+  color: red;
+}
+nav{
+    background-color: gold;
+}
+.titleText{
+    color: rgba(78, 95, 182, 0.759);
+    text-align: center;
+    background-color: black;
+    margin: 0;
+    font-size: max(2vw, 5vw);
+}
+.navLink {
+  width: 10%;
+  height: fit-content;
+  font-size: 2vw;
+  padding: 0.5vw;
+  background-color: lightcoral;
+  border: 1px solid;
+  margin: 1.5vw;
+  color: red;
+  text-decoration: none;
+  text-align: center;
+  
+}
+.navLink:hover {
+    background-color: rgb(255, 158, 122);
+    scale: 120%;
+}
+.twords{
+    color: red;
+    font-size: max(1vw, 3vw);
+
+}
+.row {
+    display: flex;
+    justify-content: center;
+
+}
+.tableBody{
+    text-align: center;
+    background-color: lightyellow;
+}
+.tableHeaders{
+    font-size: max(1vw, 3vw);
+    background-color: black;
+}
+table{
+    margin: 0 auto;
+}
+.hobbySection{
+    background-color: aliceblue;
+    justify-content: center;
+    text-align: center;
+    margin : 0 auto;    
+}
+footer{
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin: 0;
+}
