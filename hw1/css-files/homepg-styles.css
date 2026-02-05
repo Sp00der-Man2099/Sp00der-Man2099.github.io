@@ -1,3 +1,12 @@
-body{
-    background-color: grey;
+body {
+  background-color: grey;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+.whySection{
+    
+    display: flex;
 }
