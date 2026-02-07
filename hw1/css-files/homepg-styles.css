@@ -8,8 +8,8 @@ footer {
 }
 .whySection{
     
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    text-align: center;
 }
 #titleWords{
     text-align: center;
@@ -19,12 +19,36 @@ footer {
     box-shadow: 5px 5px 15px 5px #000000;
 
 }
+#wtPara{
+    /*width: 50%;*/
+    /*height: 100vw;*/
+    /*padding: 10px;*/
+}
+
+#hilightSup{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 13px;
+    letter-spacing: -0.4px;
+    word-spacing: -0.6px;
+    color: #C61CBD;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+#spImg{
+    height: 25%;
+    width: 25%;
+}
 .navButtons{
     width: 10%;
     height: fit-content;
     font-size: 2vw;
+    text-align: center;
+    color: white;
     padding: 0.5vw;
-    background-color: lightcoral;
+    background-color: mediumpurple;
 }
 
 .navButton:hover{
