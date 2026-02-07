@@ -1,5 +1,5 @@
 body {
-  background-color: grey;
+  background-color: rgb(38, 181, 232);
   text-align: center;
 }
 
@@ -9,4 +9,10 @@ footer {
 .whySection{
     
     display: flex;
+    flex-direction: column;
+}
+#titleWords{
+    text-align: center;
+    background-color: rgb(8, 23, 117);
+
 }
