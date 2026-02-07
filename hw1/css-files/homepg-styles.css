@@ -1,3 +1,8 @@
+/*
+Author: Adrik Renteria
+Date 02/02/2026
+Description: this is the CSS styles for the home page of my website
+*/
 body {
   background-color: rgb(38, 181, 232);
   text-align: center;
@@ -41,7 +46,7 @@ footer {
     height: 25%;
     width: 25%;
 }
-.navButtons{
+.navLinks{
     width: 10%;
     height: fit-content;
     font-size: 2vw;

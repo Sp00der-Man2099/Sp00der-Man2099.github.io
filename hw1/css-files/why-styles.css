@@ -1,0 +1,17 @@
+/*
+Author: Adrik Renteria
+Date 02/02/2026
+Description: this is the CSS styles for the home page of my website
+*/
+body {
+    background-color: rgb(38, 181, 232);
+    text-align: center;
+}
+#titleWords{
+    text-align: center;
+    background-color: rgb(8, 23, 117);
+    color: white;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+
+}
