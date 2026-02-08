@@ -1,7 +1,7 @@
 /*
 Author: Adrik Renteria
 Date 02/02/2026
-Description: this is the CSS styles for the home page of my website
+Description: this is the CSS styles for why.html of my website
 */
 body {
     background-color: rgb(38, 181, 232);
@@ -32,4 +32,12 @@ body {
 .navLinks:hover{
     background-color: rgb(8, 23, 117);
 
+}
+#spImg{
+    height: 25%;
+    width: 25%;
+    padding-top: 0.5px;
+}
+#whyP{
+    padding: 0.5px;
 }

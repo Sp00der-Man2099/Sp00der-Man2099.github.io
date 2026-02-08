@@ -23,3 +23,8 @@ body {
     background-color: rgb(8, 23, 117);
 
 }
+#spImg{
+    height: 25%;
+    width: 25%;
+    padding-top: 0.5px;
+}

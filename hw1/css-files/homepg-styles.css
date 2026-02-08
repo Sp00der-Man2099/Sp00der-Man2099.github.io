@@ -56,9 +56,9 @@ footer {
     background-color: mediumpurple;
 }
 
-.navButton:hover{
-    background-color: lightcoral;
-    scale: 120%;
+.navLinks:hover{
+    background-color: rgb(8, 23, 117);
+
 }
 
 .superPosition{
