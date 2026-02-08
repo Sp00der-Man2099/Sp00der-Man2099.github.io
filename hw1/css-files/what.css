@@ -23,3 +23,11 @@ body {
     background-color: rgb(8, 23, 117);
 
 }
+#spImg{
+    height: 40%;
+    width: 40%;
+    padding-top: 0.5px;
+}
+#qWhat{
+ display: flex;
+}
