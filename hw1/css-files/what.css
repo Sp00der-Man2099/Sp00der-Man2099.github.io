@@ -26,7 +26,7 @@ body {
 #spImg{
     height: 40%;
     width: 40%;
-    padding-top: 0.5px;
+    padding-top: 1px;
 }
 #qWhat{
  display: flex;
