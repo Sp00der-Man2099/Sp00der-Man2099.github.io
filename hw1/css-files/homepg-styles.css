@@ -60,3 +60,7 @@ footer {
     background-color: lightcoral;
     scale: 120%;
 }
+
+.superPosition{
+    display: flex;
+}
