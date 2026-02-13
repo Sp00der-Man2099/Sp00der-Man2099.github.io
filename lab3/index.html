@@ -10,7 +10,9 @@
   </head>
   <body>
     <h1>CSS Quiz</h1>
-    1. Where is the CSS property to set the font color?
+    <div id="q1Text">
+    1. What is the first Pokemon?
+    </div>
     <!-- <br />
     <label
       ><input type="radio" name="q1" value="font-Color" /> font-Color
@@ -22,16 +24,41 @@
 
     <div id="q1ChoicesDiv"></div>
     <br />
-    2. What is the CSS 
+    <div id="q2Text">
+    2. What is the first region called?
+    </div>
     <input type="text" id="q2">
-    <h1>CSS Quiz</h1>
-    1. Where is the CSS property to set the font color?
-    <br />
-    <input type="checkbox" id="q1" /> font-Color
-    <input type="checkbox" id="q1" /> Color
-    <input type="checkbox" id="q1" /> text-Color
 
     <br />
+    <div id="q3Text">
+    3. What are Dragon types weak to
+    </div>
+    <select id="dragonWeakness">
+        <option>Fire</option>
+        <option >Water</option>
+        <option >Grass</option>
+        <option>Fairy</option>
+      </select>
+    
+    <br>
+    <label>
+        <div id="q4Text">
+      4. How many Pokemon in the first generation
+      </div>
+      <input id="pokemonNum" type="number" min="1" max="999" step="1" />
+    </label>
+    <br>
+    
+
+      <br>
+    <div id="q5Text">
+    5. Which is the best starter Pokemon
+    </div>
+    <br />
+    <input type="checkbox" name="q5" value="Bulbasaur" /> Bulbasaur
+    <input type="checkbox" name="q5" value="Squirtle" /> Squirtle
+    <input type="checkbox" name="q5" value="Charmander" /> Charmander
+    <br>
     <button>Submit Quiz</button>
   </body>
 </html>
