@@ -28,4 +28,31 @@ function checkGuess() {
         feedback.style.color = "red";
         return;
     }
+    attempts++;
+    console.log("Attempts: " + attempts);
+    feedback.style.color = "orange";
+    if(guess == randomNumber){
+        feedback.textContent = "You guessed it! Your Win! 🏆";
+        feedback.style.color = "green";
+        gameOver();
+    } else {
+        document.querySelector("#guesses").textContent += guess + " ";
+        if(attempts == 7){
+            feedback.textContent = "Sorry, you lose!😭 ";
+            feedback.style.color = "red";
+            gameOver();
+        } else if(guess > randomNumber) {
+            feedback.textContent = "Guess is too high!";
+        
+        
+        } else {
+            feedback.textContent = "Guess is too low!";
+        }
+    }
+}
+function gameOver() {
+    let guessBtn = document.querySelector("#guessBtn");
+    let resetBtn = document.querySelector("#resetBtn");
+    guessBtn.style.display = "none"; //hides the button
+    resetBtn.style.display = "inline"; //displays reeset button
 }
