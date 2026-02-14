@@ -1,5 +1,6 @@
 //Event Listeners
 document.querySelector("#guessBtn").addEventListener("click", checkGuess);
+document.querySelector("#resetBtn").addEventListener("click", initializeGame);
 
 //Global variables
 let randomNumber;
@@ -55,4 +56,24 @@ function gameOver() {
     let resetBtn = document.querySelector("#resetBtn");
     guessBtn.style.display = "none"; //hides the button
     resetBtn.style.display = "inline"; //displays reeset button
+}
+function initializeGame() {
+    randomNumber = Math.floor(Math.random() * 99) + 1;
+    console.log("Random number:" + randomNumber);
+
+    //hiding the Reset button
+    document.querySelector("#resetBtn").style.display = "none";
+
+    //showing the Guess button
+    document.querySelector("#guessBtn").style.display = "inline";
+
+    let playerGuess = document.querySelector("#playerGuess");
+    playerGuess.focus(); //adding focus to textbox
+    playerGuess.value = ""; //clearing the textbox
+
+    let feedback = document.querySelector("#feedback");
+    feedback.textContent = ""; //clearing feedback
+
+    //clearing previous guesses
+    document.querySelector("#guesses").textContent = "";
 }
