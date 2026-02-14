@@ -1,4 +1,16 @@
 //Global variables
-let randomNumber = Math.floor(Math.random() * 99) + 1;
+let randomNumber;
+let attempts = 0;
 
-console.log(randomNumber);
+initializeGame();
+
+function initializeGame() {
+   randomNumber = Math.floor(Math.random() * 99) + 1;
+   console.log("randomNumber: " + randomNumber);
+
+   //hiding the Reset button
+   document.querySelector("#resetBtn").style.display = "none";
+  
+   //adding focus to textbox
+   document.querySelector("#playerGuess").focus();
+}
