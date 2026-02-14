@@ -1,3 +1,6 @@
+//Event Listeners
+document.querySelector("#guessBtn").addEventListener("click", checkGuess);
+
 //Global variables
 let randomNumber;
 let attempts = 0;
@@ -13,4 +16,16 @@ function initializeGame() {
   
    //adding focus to textbox
    document.querySelector("#playerGuess").focus();
+}
+function checkGuess() {
+    let feedback = document.querySelector("#feedback");
+    feedback.textContent = "";
+    let guess = document.querySelector("#playerGuess").value;
+    console.log(("Playeer Guess: " + guess));
+    if(guess < 1 || guess > 99){
+        let feedback = document.querySelector("#feedback");
+        feedback.textContent = "Enter a number between 1 and 99";
+        feedback.style.color = "red";
+        return;
+    }
 }
