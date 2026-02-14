@@ -22,6 +22,9 @@ function checkGuess() {
     let feedback = document.querySelector("#feedback");
     feedback.textContent = "";
     let guess = document.querySelector("#playerGuess").value;
+    //updating attempt count
+    let attemptCount = document.querySelector("#attemptCount");
+    attemptCount.textContent = attempts + 1;
     console.log(("Playeer Guess: " + guess));
     if(guess < 1 || guess > 99){
         let feedback = document.querySelector("#feedback");
@@ -73,6 +76,9 @@ function initializeGame() {
 
     let feedback = document.querySelector("#feedback");
     feedback.textContent = ""; //clearing feedback
+
+    let attemptCount = document.querySelector("#attemptCount");
+    attemptCount.textContent = ""; //clearing attempt count
 
     //clearing previous guesses
     document.querySelector("#guesses").textContent = "";
