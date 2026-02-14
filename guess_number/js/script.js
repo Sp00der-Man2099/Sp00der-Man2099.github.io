@@ -38,12 +38,18 @@ function checkGuess() {
     if(guess == randomNumber){
         feedback.textContent = "You guessed it! Your Win! 🏆";
         feedback.style.color = "green";
+        //update win count
+        let winsCount = document.querySelector("#winsCount");
+        winsCount.textContent = parseInt(winsCount.textContent) + 1;
         gameOver();
     } else {
         document.querySelector("#guesses").textContent += guess + " ";
         if(attempts == 7){
             feedback.textContent = "Sorry, you lose!😭 ";
             feedback.style.color = "red";
+            //update loss count
+            let lossesCount = document.querySelector("#lossesCount");
+            lossesCount.textContent = parseInt(lossesCount.textContent) + 1;
             gameOver();
         } else if(guess > randomNumber) {
             feedback.textContent = "Guess is too high!";
