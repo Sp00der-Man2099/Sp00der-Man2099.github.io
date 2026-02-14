@@ -11,16 +11,24 @@
     <header>
         <h1>Guess The Number !</h1>
     </header>
+    
+    <h2>Guess the number between 1 and 99!</h2>
     Guess:
     <!-- makes a text box -->
      <input id="userGuess" type="text" size="5">
      <br>
-     <button id="guessButton" onclick="guess">Guess!</button>
+     <button id="guessButton">Guess!</button>
+<button id="tryAgainButton" style="visibility: hidden;">Try Again</button>
+
 </br>
 <br>
 Previous Guesses:
 <span id="userGuesses"></span>
 <div id="result"></div>
-
+<!-- this section will have elements hidden -->
+ <div id="scoreboard">
+<h3>Wins: <span id="winsCount">0</span></h3>
+<h3>Losses: <span id="lossesCount">0</span></h3>
+</div>
 </body>
 </html>
