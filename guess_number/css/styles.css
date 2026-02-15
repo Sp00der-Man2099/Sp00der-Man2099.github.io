@@ -58,3 +58,7 @@ h2 {
     rgb(77, 77, 77) 5px -5px;
   --darkreader-inline-color: transparent;
 }
+#scoreboard{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+}
