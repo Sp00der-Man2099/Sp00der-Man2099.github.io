@@ -4,13 +4,17 @@ let choices = ["rock", "Rock", "ROCK",
                 "paper", "Paper", "PAPER",
                 "scissors", "Scissors", "SCISSORS"]
 //some fun secret choices
-let secretChoice = ["gun", "Gun, GUN"]
+let secretChoice = ["gun", "Gun", "GUN"]
 
 
 function rpcGame(){
+    let failed = false;
     let playerChoice = document.querySelector("#playerChoice").value;
     if(!choices.includes(playerChoice) && !secretChoice.includes(playerChoice)){
         alert("🚨 INVALID CHOICE🚨 Its only three choices, cmon")
+        failed = true;
+    }
+    if(failed == true){
         return;
     }
 
