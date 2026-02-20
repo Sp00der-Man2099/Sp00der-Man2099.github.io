@@ -1,6 +1,16 @@
 let zipElement = document.querySelector("#zipCode");
+let cityElement = document.querySelector("#city");
+let stateElement = document.querySelector("#state");
+let latElement = document.querySelector("#lat");
+let longElement = document.querySelector("#long");
+let countryElement = document.querySelector("#countyCode");
+let passwordElement = document.querySelector("#passwordInput");
+let usernameElement = document.querySelector("#usernameInput");
 
 zipElement.addEventListener("change", displayCity);
+passwordElement.addEventListener("change", displayPassword);
+usernameElement.addEventListener("change", displayUsername);
+
 
 displayStates();
 async function displayStates(){
@@ -31,6 +41,10 @@ async function displayStates(){
                 }
         } //catch    
 }
+displayCounties();
+async function displayCounties(){
+    let url = "https://csumb.space/api/countyListAPI.php?state=" + stateElement.value;
+}
 
 async function displayCity(){
     //alert("displaying city...")
@@ -42,5 +56,35 @@ async function displayCity(){
     //alert(data.city);
     document.querySelector("#city").textContent = data.city;
 
+    cityElement.textContent = data.city;
+    latElement.textContent = data.latitude;
+    longElement.textContent = data.longitude;
+}
+async function displayPassword(){
+    //let password = passwordElement.value;
+    let url = "https://csumb.space/api/suggestedPassword.php?length=8";
+    let response = await fetch(url);
+    let data = await response.json();
 
+    document.querySelector("#passwordMsg").textContent = "Suggested Password: " + data.password;
+}
+async function displayUsername(){
+    let url = "https://csumb.space/api/usernamesAPI.php?username=eeny"
+    let response = await fetch(url);
+    let data = await response.json();
+
+    console.log(data);
+    let length = usernameElement.value.length;
+    if(length < 6){
+        document.querySelector("#userName").textContent = "Username must be at least 6 characters.";
+        document.querySelector("#userName").style.color = "red";
+    } else if (data.available){
+        document.querySelector("#userName").textContent = "Username is available!";
+        document.querySelector("#userName").style.color = "black";
+    } else {
+        document.querySelector("#userName").textContent = "Username is not available.";
+        document.querySelector("#userName").style.color = "black";
+    }
+
+    
 }
