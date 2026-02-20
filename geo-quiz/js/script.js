@@ -1,6 +1,15 @@
 document.querySelector("button").addEventListener("click", gradeQuiz);
 
 var score = 0;
+function dispalyQ4Choices() {
+  let q4ChoicesArray = ["Main", "Rhode Island", "Maryland", "Delaware"];
+  q4ChoicesArray = _.shuffle(q4ChoicesArray);
+  for (let i = 0; i < q4ChoicesArray.length; i++) {
+    document.querySelector("#q4Choices").innerHTML +=
+      ` <input type="radio" name="q4" id= "${q4ChoicesArray[i]}" value="${q4ChoicesArray[i]}"> <label for="${q4ChoicesArray[i]}"> ${q4ChoicesArray[i]}</label>`;
+  }
+}
+dispalyQ4Choices();
 
 function isFormValid() {
   let isValid = true;
