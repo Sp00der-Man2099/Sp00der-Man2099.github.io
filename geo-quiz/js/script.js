@@ -89,4 +89,7 @@ function gradeQuiz() {
   document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
   document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
   localStorage.setItem("total_attempts", attempts);
+  if(score<=80){
+    document.querySelector("#congrats").innerHTML = "Well Done! 🏆";
+  }
 }
