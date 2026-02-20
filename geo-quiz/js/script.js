@@ -1,6 +1,8 @@
 document.querySelector("button").addEventListener("click", gradeQuiz);
 
 var score = 0;
+var attempts = localStorage.getItem("total_attempts");
+
 function dispalyQ4Choices() {
   let q4ChoicesArray = ["Main", "Rhode Island", "Maryland", "Delaware"];
   q4ChoicesArray = _.shuffle(q4ChoicesArray);
@@ -37,7 +39,7 @@ function wrongAnswer(index) {
 }
 
 function gradeQuiz() {
-  console.log("Grading quiz…");
+  //console.log("Grading quiz…");
   //reset valiation feedback
   document.querySelector("#validationFdbk").innerHTML = "";
   if (!isFormValid()) {
@@ -85,4 +87,6 @@ function gradeQuiz() {
   }
 
   document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
+  document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
+  localStorage.setItem("total_attempts", attempts);
 }
