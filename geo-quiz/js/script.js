@@ -2,7 +2,12 @@ document.querySelector("button").addEventListener("click", gradeQuiz);
 //global variables
 var score = 0;
 var attempts = localStorage.getItem("total_attempts");
-const startTime = Date.now();
+let startTime = localStorage.getItem("quizStartTime");
+//if there is no saved start time, it means they just started. Save the current time.
+if (!startTime) {
+  startTime = Date.now();
+  localStorage.setItem("quizStartTime", startTime);
+}
 
 function dispalyQ4Choices() {
   let q4ChoicesArray = ["Main", "Rhode Island", "Maryland", "Delaware"];
@@ -105,6 +110,9 @@ function gradeQuiz() {
   const endTime = Date.now();
   let timeTakenInSeconds = (endTime - startTime) / 1000; // Divide by 1000 to convert ms to seconds
   document.querySelector("#timeTaken").innerHTML = `Time Taken: ${timeTakenInSeconds.toFixed(2)} seconds`;
+
+  //clear the start time so their next attempt starts fresh
+  localStorage.removeItem("quizStartTime");
 
   //displaying special message
   if(score >= 80){
