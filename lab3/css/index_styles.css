@@ -1,3 +1,70 @@
-body{
-    background-color: aqua;
+body {
+  background-color: rgb(85, 255, 0);
+  text-align: center;
+}
+h1 {
+  color: rgb(255, 255, 255);
+  background: rgb(51, 51, 51);
+  text-shadow:
+    rgb(255, 255, 255) 0px 0px 5px,
+    rgb(255, 255, 255) 0px 0px 10px,
+    rgb(255, 255, 255) 0px 0px 15px,
+    rgb(255, 45, 149) 0px 0px 20px,
+    rgb(255, 45, 149) 0px 0px 30px,
+    rgb(255, 45, 149) 0px 0px 40px,
+    rgb(255, 45, 149) 0px 0px 50px,
+    rgb(255, 45, 149) 0px 0px 75px;
+  --darkreader-inline-color: var(--darkreader-text-ffffff, #ffffe9);
+  --darkreader-inline-bgcolor: var(--darkreader-background-333333, #222321);
+  --darkreader-inline-bgimage: none;
+  text-align: center;
+  border: 10px double #DB2121;
+}
+h1:hover{
+    color: rgb(255, 255, 255);
+  background: rgb(51, 51, 51);
+  text-shadow:
+    rgb(255, 255, 255) 0px 0px 5px,
+    rgb(255, 255, 255) 0px 0px 10px,
+    rgb(255, 255, 255) 0px 0px 15px,
+    rgb(204, 204, 252) 0px 0px 20px,
+    rgb(191, 192, 255) 0px 0px 30px,
+    rgb(128, 132, 248) 0px 0px 40px,
+    rgb(69, 75, 245) 0px 0px 50px,
+    rgb(45, 48, 255) 0px 0px 75px;
+  --darkreader-inline-color: var(--darkreader-text-ffffff, #ffffe9);
+  --darkreader-inline-bgcolor: var(--darkreader-background-333333, #222321);
+  --darkreader-inline-bgimage: none;
+  text-align: center;
+  border: 10px double #1400f6;
+}
+
+#garyGif{
+   border: 15px ridge #3CA49A;
+   scale : 50%;
+}
+#garyGif:hover{
+    scale: 200%;
+}
+#garyGif:active{
+    scale:150%;
+}
+footer{
+    text-align: center;
+    text-size-adjust: 20%;
+    bottom : 0px; 
+}
+#totalScore{
+    color: white;
+}
+button:hover{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    scale: 175%;
+    
+}
+button:active{
+    background-color: slateblue;
+    color: white;
+    scale: 125%;
 }
