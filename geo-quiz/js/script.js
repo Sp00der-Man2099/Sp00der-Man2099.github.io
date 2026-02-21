@@ -53,7 +53,7 @@ function gradeQuiz() {
   let q1Response = document.querySelector("#q1").value.toLowerCase();
   let q2Response = document.querySelector("#q2").value;
   let q4Response = document.querySelector("input[name=q4]:checked").value;
-  let q5Response = document.querySelector("#q5").value;
+  let q5Response = document.querySelector("input[name=q5]:checked").value;
 
   console.log(q1Response);
   console.log(q2Response);
