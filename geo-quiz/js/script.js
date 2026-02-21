@@ -1,7 +1,8 @@
 document.querySelector("button").addEventListener("click", gradeQuiz);
-
+//global variables
 var score = 0;
 var attempts = localStorage.getItem("total_attempts");
+const startTime = Date.now();
 
 function dispalyQ4Choices() {
   let q4ChoicesArray = ["Main", "Rhode Island", "Maryland", "Delaware"];
@@ -100,6 +101,11 @@ function gradeQuiz() {
   document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
   document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
   localStorage.setItem("total_attempts", attempts);
+//displaying time taken
+  const endTime = Date.now();
+  let timeTakenInSeconds = (endTime - startTime) / 1000; // Divide by 1000 to convert ms to seconds
+  document.querySelector("#timeTaken").innerHTML = `Time Taken: ${timeTakenInSeconds.toFixed(2)} seconds`;
+
   //displaying special message
   if(score >= 80){
     document.querySelector("#congrats").innerHTML = "Well Done! 🏆";
