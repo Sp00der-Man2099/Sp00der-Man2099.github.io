@@ -22,6 +22,7 @@ function isFormValid() {
   }
   return isValid;
 }
+//function to handle right answer
 function rightAnswer(index) {
   document.querySelector(`#q${index}Feedback`).innerHTML = "Correct!";
   document.querySelector(`#q${index}Feedback`).className =
@@ -30,6 +31,7 @@ function rightAnswer(index) {
     "<img src='img/checkmark.png' alt='Checkmark'>";
   score += 20;
 }
+//function to handle wrong answer
 function wrongAnswer(index) {
   document.querySelector(`#q${index}Feedback`).innerHTML = "Incorrect!";
   document.querySelector(`#q${index}Feedback`).className =
@@ -37,7 +39,7 @@ function wrongAnswer(index) {
   document.querySelector(`#markImg${index}`).innerHTML =
     "<img src='img/xmark.png' alt='xmark'>";
 }
-
+//grading quiz function
 function gradeQuiz() {
   //console.log("Grading quiz…");
   //reset valiation feedback
@@ -50,10 +52,12 @@ function gradeQuiz() {
   let q1Response = document.querySelector("#q1").value.toLowerCase();
   let q2Response = document.querySelector("#q2").value;
   let q4Response = document.querySelector("input[name=q4]:checked").value;
+  let q5Response = document.querySelector("#q5").value;
 
   console.log(q1Response);
   console.log(q2Response);
   console.log(q4Response);
+  console.log(q5Response);
 
   //grading question 1
   if (q1Response == "sacramento") {
@@ -62,7 +66,7 @@ function gradeQuiz() {
     wrongAnswer(1);
   }
   //grading question 2
-  if (q2Response == "mo") {
+  if (q2Response == "ms") {
     rightAnswer(2);
   } else {
     wrongAnswer(2);
@@ -85,10 +89,18 @@ function gradeQuiz() {
   } else {
     wrongAnswer(4);
   }
+  //grading question 5
+  if(q5Response =="dt"){
+    rightAnswer(5);
+  } else {
+    wrongAnswer(5);
+  }
 
+  //displaying total score and attempts
   document.querySelector("#totalScore").innerHTML = `Total Score: ${score}`;
   document.querySelector("#totalAttempts").innerHTML = `Total Attempts: ${++attempts}`;
   localStorage.setItem("total_attempts", attempts);
+  //displaying special message
   if(score >= 80){
     document.querySelector("#congrats").innerHTML = "Well Done! 🏆";
   } else {
