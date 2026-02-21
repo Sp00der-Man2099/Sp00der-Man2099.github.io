@@ -3,64 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 3: Quiz</title>
+    <title>Lab 3: Pokemon Quiz</title>
     <script src="https://unpkg.com/underscore@1.13.7/underscore-umd-min.js"></script>
-
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <h1>CSS Quiz</h1>
+    <h1>Pokemon Quiz</h1>
+    
     <div id="q1Text">
-    1. What is the first Pokemon?
+        <span id="markImg1"></span> 1. What is the first Pokemon?
     </div>
-    <!-- <br />
-    <label
-      ><input type="radio" name="q1" value="font-Color" /> font-Color
-    </label>
-    <label><input type="radio" name="q1" value="Color" /> Color </label>
-    <label
-      ><input type="radio" name="q1" value="text-Color" /> text-Color
-    </label> -->
-
     <div id="q1ChoicesDiv"></div>
     <br />
+    
     <div id="q2Text">
-    2. What is the first region called?
+        <span id="markImg2"></span> 2. What is the first region called?
     </div>
     <input type="text" id="q2">
-
-    <br />
+    <br /><br />
+    
     <div id="q3Text">
-    3. What are Dragon types weak to
+        <span id="markImg3"></span> 3. What are Dragon types weak to?
     </div>
     <select id="dragonWeakness">
+        <option value="">Select One</option>
         <option>Fire</option>
-        <option >Water</option>
-        <option >Grass</option>
+        <option>Water</option>
+        <option>Grass</option>
         <option>Fairy</option>
-      </select>
+    </select>
+    <br /><br />
     
-    <br>
     <label>
         <div id="q4Text">
-      4. How many Pokemon in the first generation
-      </div>
-      <input id="pokemonNum" type="number" min="1" max="999" step="1" />
+            <span id="markImg4"></span> 4. How many Pokemon in the first generation?
+        </div>
+        <input id="pokemonNum" type="number" min="1" max="999" step="1" />
     </label>
-    <br>
+    <br /><br />
     
-
-      <br>
     <div id="q5Text">
-    5. Which is the best starter Pokemon
+        <span id="markImg5"></span> 5. Which is the best starter Pokemon?
     </div>
-    <br />
-    <input type="checkbox" name="q5" value="Bulbasaur" /> Bulbasaur
-    <input type="checkbox" name="q5" value="Squirtle" /> Squirtle
-    <input type="checkbox" name="q5" value="Charmander" /> Charmander
-    <br>
+    <input type="radio" name="q5" value="Bulbasaur" /> Bulbasaur
+    <input type="radio" name="q5" value="Squirtle" /> Squirtle
+    <input type="radio" name="q5" value="Charmander" /> Charmander
+    <br /><br />
+    
+    <h3 id="validationFdbk" style="color: red;"></h3>
+    
     <button>Submit Quiz</button>
+    <br><br>
+    
+    <h2 id="totalScore"></h2>
+    <h3 id="timeTaken"></h3>
+    <h2><span id="congrats"></span></h2>
+    
     <br>
-     Smell Ya Later, Alligator!
+    <p>Smell Ya Later!</p>
   </body>
 </html>
