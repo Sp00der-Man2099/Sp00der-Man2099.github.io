@@ -3,6 +3,9 @@ h1:hover{
     scale: 150%;
     background-color: rgb(177, 110, 238);
 }
+h1:active{
+    scale: 120%;
+}
 h1{
     font-family: cursive;
     color: royalblue;
@@ -21,5 +24,28 @@ button:hover{
 }
 button:active{
     scale: 120%;
+}
+#q5Answers{
+    color: blue;
+}
+#q5Answers:hover{
+    scale: 140%;
+}
+#q5Answers:active{
+    scale: 120%;
+}
+#q3Answers{
+    color: blue;
+}
+#q3Answers:hover{
+    scale: 140%;
+}
+#q3Answers:active{
+    scale: 120%;
+}
+footer{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 100;
 }
 
