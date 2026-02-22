@@ -1,4 +1,6 @@
 document.querySelector("#chooseBtn").addEventListener("click", rpcGame);
+// this will reset the game
+document.querySelector("#tryAgainButton").addEventListener("click", resetGame);
 //made a list of possible choices for the player.
 let choices = ["rock", "paper", "scissors"];
 //some fun secret choices
@@ -19,7 +21,10 @@ function rpcGame() {
     !secretChoice.includes(playerChoice) &&
     !pokimonChoice.includes(playerChoice)
   ) {
-    alert("🚨 INVALID CHOICE🚨 \nIt's only three choices, cmon");
+    //alert("🚨 INVALID CHOICE🚨 \nIt's only three choices, cmon");
+    document.querySelector("#result").textContent = "Invalid choice, try again."
+    document.querySelector("#chooseBtn").disabled = true;
+    document.querySelector("#tryAgainButton").style.visibility = "visible";
     return;
   }
 
@@ -61,4 +66,15 @@ function rpcGame() {
       alert("You lose! Rock beats scissors");
     }
   }
+}
+
+function resetGame() {
+  //resets the input field
+  document.querySelector("#playerChoice").value = "";
+  //resets the result text
+  document.querySelector("#result").textContent = "";
+  //hides the try again button
+  document.querySelector("#tryAgainButton").style.visibility = "hidden";
+  //enables the choose button
+  document.querySelector("#chooseBtn").disabled = false;
 }
