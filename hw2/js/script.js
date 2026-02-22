@@ -24,47 +24,59 @@ function rpcGame() {
     //alert("🚨 INVALID CHOICE🚨 \nIt's only three choices, cmon");
     document.querySelector("#result").textContent = "Invalid choice, try again."
     document.querySelector("#imgResult").innerHTML = `<img src="img/wrong.gif" alt="wrong">`;
-    endstate();
+      endstate();
     return;
   }
 
   //secret Choices
   if (secretChoice.includes(playerChoice)) {
-    alert("Damn, I forgot about that option. Congratulations Cowboy, you win!");
-    return;
+    document.querySelector("#result").textContent = "Damn, I forgot about that option... Congratulations Cowboy, you win!";
+    document.querySelector("#imgResult").innerHTML = `<img src="img/gun.png" alt="gun">`;
+    endstate();
+    return; 
   } else if (pokimonChoice.includes(playerChoice)) {
-    alert("Scizor is a strong pokimon, but it's not a choice in this game. You lose");
+    document.querySelector("#result").textContent = "Scizor is a strong pokimon, but it's not a choice in this game. Try again.";
+    document.querySelector("#imgResult").innerHTML = `<img src="img/scizor.jpg" alt="scizor">`;
+    endstate();
     return; 
   }
 
   if (playerChoice === computerChoice) {
-    alert("IT'S A TIE!");
+    document.querySelector("#result").textContent = "IT'S A TIE!";
+    document.querySelector("#imgResult").innerHTML = `<img src="img/doubleKO.gif" alt="draw">`;
+    endstate();
     return;
   }
 
   //rock cases
   if (playerChoice === "rock") {
+    document.querySelector("#imgResult").innerHTML = `<img src="img/the-rock.webp" alt="rock">`;
     if (computerChoice === "scissors") {
-      alert("You win! Rock beats scissors");
+      document.querySelector("#result").textContent = "You win! Rock beats scissors";
     } else {
-      alert("You lose! Paper beats rock");
+      document.querySelector("#result").textContent = "You lose! Paper beats rock";
     }
+    endstate();
   }
   //paper cases
   else if (playerChoice === "paper") {
+    document.querySelector("#imgResult").innerHTML = `<img src="img/michael-scott.jpg" alt="paper">`;
     if (computerChoice === "rock") {
-      alert("You win! Paper beats rock");
+      document.querySelector("#result").textContent = "You win! Paper beats rock";
     } else {
-      alert("You lose! Scissors beats paper");
+      document.querySelector("#result").textContent = "You lose! Scissors beats paper";
     }
+    endstate();
   }
   //scissors cases
   else if (playerChoice === "scissors") {
+    document.querySelector("#imgResult").innerHTML = `<img src="img/scissor-hands.jpg" alt="scissor hands">`;
     if (computerChoice === "paper") {
-      alert("You win! Scissors beats paper");
+      document.querySelector("#result").textContent = "You win! Scissors beats paper";
     } else {
-      alert("You lose! Rock beats scissors");
+      document.querySelector("#result").textContent = "You lose! Rock beats scissors";
     }
+    endstate();
   }
 }
 
