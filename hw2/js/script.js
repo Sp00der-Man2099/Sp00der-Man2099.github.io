@@ -23,8 +23,8 @@ function rpcGame() {
   ) {
     //alert("🚨 INVALID CHOICE🚨 \nIt's only three choices, cmon");
     document.querySelector("#result").textContent = "Invalid choice, try again."
-    document.querySelector("#chooseBtn").disabled = true;
-    document.querySelector("#tryAgainButton").style.visibility = "visible";
+    document.querySelector("#imgResult").innerHTML = `<img src="img/wrong.gif" alt="wrong">`;
+    endstate();
     return;
   }
 
@@ -77,4 +77,11 @@ function resetGame() {
   document.querySelector("#tryAgainButton").style.visibility = "hidden";
   //enables the choose button
   document.querySelector("#chooseBtn").disabled = false;
+  //resets the image result
+  document.querySelector("#imgResult").innerHTML = "";
+}
+// this makes the choose button unclickable and make the try again button visible
+function endstate(){
+  document.querySelector("#chooseBtn").disabled = true;
+    document.querySelector("#tryAgainButton").style.visibility = "visible";
 }
