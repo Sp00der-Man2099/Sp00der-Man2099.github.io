@@ -1,0 +1,25 @@
+h1:hover{
+    color : red;
+    scale: 150%;
+    background-color: rgb(177, 110, 238);
+}
+h1{
+    font-family: cursive;
+    color: royalblue;
+}
+h3:hover{
+    color : green;
+    scale: 145%;
+}
+h3:active{
+    color: blue;
+    scale: 120%;
+}
+button:hover{
+    scale: 150%;
+    
+}
+button:active{
+    scale: 120%;
+}
+

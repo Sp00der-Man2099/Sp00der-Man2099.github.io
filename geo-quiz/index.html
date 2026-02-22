@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"> </script> 
+     <link rel="stylesheet" href="css/index_styles.css">
   </head>
   <body class="text-center">
     <h1 class="p-5 bg-info">US Geography Quiz</h1>
@@ -66,8 +67,9 @@
     <br /><br />
 
     <h3 id="validationFdbk" class="bg-danger text-white"></h3>
-    <button type="button" class="btn btn-primary">Submit Quiz</button>
-
+    <div class="d-grid gap-2">
+    <button type="button" class="btn btn-primary btn-sm">Submit Quiz</button>
+    </div>
     <br />
     <h2 id="totalScore" class="text-info"></h2>
     <h3 id="timeTaken" class="text-secondary"></h3>
@@ -76,6 +78,10 @@
     <h2><span id="congrats"></span></h2>
     
     
+    <br><br>
+    <footer>
+      <p id="footerSection"> Created by Adrik Renteria</p>
+    </footer>
 
     <script src="js/script.js"></script>
   </body>
