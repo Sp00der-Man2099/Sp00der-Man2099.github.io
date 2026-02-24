@@ -67,6 +67,15 @@ async function displayPassword(){
     let data = await response.json();
 
     document.querySelector("#passwordMsg").textContent = "Suggested Password: " + data.password;
+
+    let length = passwordInput.value.length;
+
+    if(length < 6){
+        document.querySelector("#passwordMsg").textContent = "Password must be at least 6 characters.";
+        document.querySelector("#passwordMsg").style.color = "red";
+    } else {
+        document.querySelector("#passwordMsg").style.color = "black";
+    }
 }
 async function displayUsername(){
     let url = "https://csumb.space/api/usernamesAPI.php?username=eeny"
