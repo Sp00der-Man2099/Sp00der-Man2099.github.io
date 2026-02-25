@@ -5,10 +5,12 @@ let latElement = document.querySelector("#lat");
 let longElement = document.querySelector("#long");
 let countyElement = document.querySelector("#countyCode");
 let passwordElement = document.querySelector("#passwordInput");
+let passwordComfirmElement = document.querySelector("#passwordComfirm")
 let usernameElement = document.querySelector("#usernameInput");
 
 zipElement.addEventListener("change", displayCity);
 passwordElement.addEventListener("change", displayPassword);
+passwordComfirmElement.addEventListener("change", displayPasswordComfirm)
 usernameElement.addEventListener("change", displayUsername);
 stateElement.addEventListener("change", displayCounties);
 
@@ -116,6 +118,17 @@ async function displayPassword() {
         document.querySelector("#passwordMsg").style.color = "black";
     }
 }
+async function displayPasswordComfirm(){
+    let firstEntry = passwordInput.value;
+    let secondEntry = passwordComfirm.value;
+    if(firstEntry === secondEntry){
+        document.querySelector("#pwComfirmResponse").textContent = "They Match!"
+        document.querySelector("#pwComfirmResponse").style.color = "black";
+    } else {
+        document.querySelector("#pwComfirmResponse").textContent = "Passwords don't match"
+        document.querySelector("#pwComfirmResponse").style.color = "red";
+    }
+}
 async function displayUsername() {
     let url = "https://csumb.space/api/usernamesAPI.php?username=eeny"
     let response = await fetch(url);
@@ -123,8 +136,8 @@ async function displayUsername() {
 
     console.log(data);
     let length = usernameElement.value.length;
-    if (length < 6) {
-        document.querySelector("#userName").textContent = "Username must be at least 6 characters.";
+    if (length < 3) {
+        document.querySelector("#userName").textContent = "Username must be at least 3 characters.";
         document.querySelector("#userName").style.color = "red";
     } else if (data.available) {
         document.querySelector("#userName").textContent = "Username is available!";
