@@ -53,6 +53,11 @@ async function displayCity(){
     let response = await fetch(url);
     let data = await response.json();
     console.log(data);
+    if(data == false){
+        document.querySelector("#zipMsg").textContent = "INVALID ZIP CODE";
+    } else {
+        document.querySelector("#zipMsg").textContent = "";
+    }
     //alert(data.city);
     document.querySelector("#city").textContent = data.city;
 
