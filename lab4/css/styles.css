@@ -1,3 +1,51 @@
-body{
+body {
     background-color: aqua;
+    justify-content: center;
+}
+
+h1 {
+    background-color: blue;
+    color: aliceblue;
+    border: 3px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(64, 116, 181) 2px 2px 0px, rgb(64, 116, 181) 2px -2px 0px, rgb(64, 116, 181) -2px 2px 0px, rgb(64, 116, 181) -2px -2px 0px, rgb(64, 116, 181) 2px 0px 0px, rgb(64, 116, 181) 0px 2px 0px, rgb(64, 116, 181) -2px 0px 0px, rgb(64, 116, 181) 0px -2px 0px;
+    --darkreader-inline-color: var(--darkreader-text-ffffff, #ffffe9);
+    --darkreader-inline-bgcolor: var(--darkreader-background-ffffff, #101110);
+    --darkreader-inline-bgimage: none;
+}
+
+h1:hover {
+    scale: 150%;
+}
+
+h1:active {
+    scale: 120%;
+}
+
+fieldset {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    display: table-column;
+    color: brown;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    word-spacing: -1.8px;
+
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+#submit:hover {
+    scale: 150%;
+    background-color: blue;
+    color: white;
 }
