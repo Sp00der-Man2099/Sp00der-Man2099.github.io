@@ -9,11 +9,14 @@ let passwordComfirmElement = document.querySelector("#passwordComfirm")
 let usernameElement = document.querySelector("#usernameInput");
 
 zipElement.addEventListener("change", displayCity);
-passwordElement.addEventListener("change", displayPassword);
-passwordComfirmElement.addEventListener("change", displayPasswordComfirm)
+//passwordElement.addEventListener("change", displayPassword);
 usernameElement.addEventListener("change", displayUsername);
 stateElement.addEventListener("change", displayCounties);
-
+//focus shows the suggest password the moment they click the box
+passwordComfirmElement.addEventListener("focus", displayPasswordComfirm)
+//real time validation
+passwordElement.addEventListener("input", displayPassword);
+passwordComfirmElement.addEventListener("input", displayPasswordComfirm);
 
 displayStates();
 async function displayStates() {
@@ -103,26 +106,36 @@ async function displayCity() {
 }
 async function displayPassword() {
     //let password = passwordElement.value;
-    //gives a suggeste password of length 8
-    let url = "https://csumb.space/api/suggestedPassword.php?length=8";
-    let response = await fetch(url);
-    let data = await response.json();
+    let passwordValue = passwordElement.value;
+    let passwordMsg = document.querySelector("#passwordMsg");
 
-    document.querySelector("#passwordMsg").textContent = "Suggested Password: " + data.password;
+    if (passwordValue.length === 0) {
+        //gives a suggeste password of length 8
+        let url = "https://csumb.space/api/suggestedPassword.php?length=8";
+        let response = await fetch(url);
+        let data = await response.json();
 
-    let length = passwordInput.value.length;
+        passwordMsg.textContent = "Suggested Password: " + data.password;
+        passwordMsg.style.color = "black";
+    }
 
-    if (length < 6 ) {
-        document.querySelector("#passwordMsg").textContent = "Password must be at least 6 characters.";
-        document.querySelector("#passwordMsg").style.color = "red";
+    else if (passwordValue.length < 6) {
+        passwordMsg.textContent = "Password must be at least 6 characters.";
+        passwordMsg.style.color = "red";
     } else {
-        document.querySelector("#passwordMsg").style.color = "black";
+        passwordMsg.textContent = "Password length is good!";
+        passwordMsg.style.color = "green";
     }
 }
-async function displayPasswordComfirm(){
-    let firstEntry = passwordInput.value;
-    let secondEntry = passwordComfirm.value;
-    if(firstEntry === secondEntry){
+async function displayPasswordComfirm() {
+    let firstEntry = passwordElement.value;
+    let secondEntry = passwordComfirmElement.value;
+    //runs if the user hasn't typed anything
+    if (secondEntry.length === 0) {
+        document.querySelector("#pwComfirmResponse").textContent = "";
+        return; 
+    }
+    if (firstEntry === secondEntry) {
         document.querySelector("#pwComfirmResponse").textContent = "They Match!"
         document.querySelector("#pwComfirmResponse").style.color = "black";
     } else {
