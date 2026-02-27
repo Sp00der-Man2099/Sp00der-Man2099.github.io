@@ -103,6 +103,7 @@ async function displayCity() {
 }
 async function displayPassword() {
     //let password = passwordElement.value;
+    //gives a suggeste password of length 8
     let url = "https://csumb.space/api/suggestedPassword.php?length=8";
     let response = await fetch(url);
     let data = await response.json();
@@ -111,7 +112,7 @@ async function displayPassword() {
 
     let length = passwordInput.value.length;
 
-    if (length < 6) {
+    if (length < 6 ) {
         document.querySelector("#passwordMsg").textContent = "Password must be at least 6 characters.";
         document.querySelector("#passwordMsg").style.color = "red";
     } else {
@@ -130,21 +131,24 @@ async function displayPasswordComfirm(){
     }
 }
 async function displayUsername() {
-    let url = "https://csumb.space/api/usernamesAPI.php?username=eeny"
+    //fetches the data from api + the username
+    let url = "https://csumb.space/api/usernamesAPI.php?username=" + usernameElement.value;
     let response = await fetch(url);
     let data = await response.json();
 
     console.log(data);
+
+    //checks username length
     let length = usernameElement.value.length;
     if (length < 3) {
         document.querySelector("#userName").textContent = "Username must be at least 3 characters.";
         document.querySelector("#userName").style.color = "red";
-    } else if (data.available) {
+    } else if (data.available) {//checks to see if the name is available
         document.querySelector("#userName").textContent = "Username is available!";
         document.querySelector("#userName").style.color = "black";
     } else {
         document.querySelector("#userName").textContent = "Username is not available.";
-        document.querySelector("#userName").style.color = "black";
+        document.querySelector("#userName").style.color = "red";
     }
 
 
