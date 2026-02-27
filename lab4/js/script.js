@@ -9,12 +9,12 @@ let passwordComfirmElement = document.querySelector("#passwordComfirm")
 let usernameElement = document.querySelector("#usernameInput");
 
 zipElement.addEventListener("change", displayCity);
-//passwordElement.addEventListener("change", displayPassword);
 usernameElement.addEventListener("change", displayUsername);
 stateElement.addEventListener("change", displayCounties);
 //focus shows the suggest password the moment they click the box
+passwordElement.addEventListener("focus", displayPassword);
 passwordComfirmElement.addEventListener("focus", displayPasswordComfirm)
-//real time validation
+//real time validation thanks to input
 passwordElement.addEventListener("input", displayPassword);
 passwordComfirmElement.addEventListener("input", displayPasswordComfirm);
 
@@ -118,7 +118,10 @@ async function displayPassword() {
         passwordMsg.textContent = "Suggested Password: " + data.password;
         passwordMsg.style.color = "black";
     }
-
+    else if (passwordValue.length >= 8) {
+        passwordMsg.textContent = "Password length is great!";
+        passwordMsg.style.color = "blue";
+    }
     else if (passwordValue.length < 6) {
         passwordMsg.textContent = "Password must be at least 6 characters.";
         passwordMsg.style.color = "red";
