@@ -7,16 +7,18 @@ let countyElement = document.querySelector("#countyCode");
 let passwordElement = document.querySelector("#passwordInput");
 let passwordComfirmElement = document.querySelector("#passwordComfirm")
 let usernameElement = document.querySelector("#usernameInput");
+let submitBtnElement = document.querySelector("#submit")
 
 zipElement.addEventListener("change", displayCity);
 usernameElement.addEventListener("change", displayUsername);
 stateElement.addEventListener("change", displayCounties);
+submitBtnElement.addEventListener("click", displaySubmit);
 //focus shows the suggest password the moment they click the box
 passwordElement.addEventListener("focus", displayPassword);
 passwordComfirmElement.addEventListener("focus", displayPasswordComfirm)
 //real time validation thanks to input
-passwordElement.addEventListener("input", displayPassword);
-passwordComfirmElement.addEventListener("input", displayPasswordComfirm);
+// passwordElement.addEventListener("input", displayPassword);
+// passwordComfirmElement.addEventListener("input", displayPasswordComfirm);
 
 displayStates();
 async function displayStates() {
@@ -168,4 +170,9 @@ async function displayUsername() {
     }
 
 
+}
+async function displaySubmit() {
+    displayUsername()
+    displayPassword()
+    displayPasswordComfirm()
 }
